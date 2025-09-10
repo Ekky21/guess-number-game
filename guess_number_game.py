@@ -1,5 +1,12 @@
 import time
 seed = int(time.time()*1000)
+def print_rules():
+    print("""
+Правила игры:
+1. Загадано число от 1 до 100.
+2. Введи 0, чтобы выйти из игры.
+3. Каждые 3 ошибки можно получить подсказку.
+4. Подсказка выдаётся с рандомным диапазоном ±5…15.""")
 
 def attempts_word(n: int) -> str:
     n = abs(n)
@@ -24,6 +31,10 @@ rand = random_from_time_LCG (1, 100)
 attempts = 0
 total_attempts = 0
 print("Угадай целое число от 1 до 100. Для отмены игры напиши '0'")
+print("Показать правила?")
+rules = input().strip().lower()
+if rules == "да":
+    print_rules()
 
 while True:
     try:
@@ -56,5 +67,4 @@ while True:
             high = min(100, rand + delta)
             print(f'Ваше число находится между {low} и {high}')
             attempts = 0
-
 
