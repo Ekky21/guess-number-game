@@ -51,7 +51,7 @@ while True:
         print("Вы хотите получить подсказку?")
         tip = input().strip().lower()
         if tip == "да":
-            delta = random_from_time_LC(5, 15)
+            delta = random_from_time_LCG(5, 15)
             low = max(1, rand - delta)
             high = min(100, rand + delta)
             print(f'Ваше число находится между {low} и {high}')
